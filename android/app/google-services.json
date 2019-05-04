@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "1059338935788",
+    "firebase_url": "https://hostingtest-4d77a.firebaseio.com",
+    "project_id": "hostingtest-4d77a",
+    "storage_bucket": "hostingtest-4d77a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059338935788:android:7e5d4c6b66e7109e",
+        "android_client_info": {
+          "package_name": "cespresso.gmail.com.todoy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059338935788-6n2gifaa6qu743pcpevt59mmh60giiau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cespresso.gmail.com.todoy",
+            "certificate_hash": "da2473b8242bb9c9621041e1e80a3dee48d58350"
+          }
+        },
+        {
+          "client_id": "1059338935788-rc3rl3k41mr5kbpmtfb4d3iuqpl984d9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cespresso.gmail.com.todoy",
+            "certificate_hash": "c72c71d64ff9357cd8cde37d6eb043de34ec1778"
+          }
+        },
+        {
+          "client_id": "1059338935788-6g4apl8oq85dm21v6erg7rsbkvbbs9qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5zmS_hBaYTXRerSLujijjOLBDLERdsYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059338935788-6g4apl8oq85dm21v6erg7rsbkvbbs9qo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059338935788:android:d3d5a0615e60f9a1",
+        "android_client_info": {
+          "package_name": "com.gmail.a2cespresso.todoy_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059338935788-i8frbn93pub01k9vt7vpoht1u7m0iphc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gmail.a2cespresso.todoy_flutter",
+            "certificate_hash": "c72c71d64ff9357cd8cde37d6eb043de34ec1778"
+          }
+        },
+        {
+          "client_id": "1059338935788-6g4apl8oq85dm21v6erg7rsbkvbbs9qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5zmS_hBaYTXRerSLujijjOLBDLERdsYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059338935788-6g4apl8oq85dm21v6erg7rsbkvbbs9qo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
