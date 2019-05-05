@@ -27,6 +27,9 @@ dependencies:
   # Firebase
   firebase_auth: 0.8.3
 
+  # Scoped Model
+  scoped_model: 1.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
