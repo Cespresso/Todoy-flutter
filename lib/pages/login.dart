@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:todoy_flutter/model/firebase_model.dart';
@@ -12,14 +13,19 @@ class Login extends StatelessWidget {
     );
   }
 
-  /*
-  *
-  *
-  *
-  * */
+  _checkUser(BuildContext context) {
+    FirebaseUser _user =
+        ScopedModel.of<FirebaseModel>(context, rebuildOnChange: true).user;
+    if (_user != null) {
+      Navigator.pushReplacementNamed(context, "/todos");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration(milliseconds: 100)).then((_) {
+      _checkUser(context);
+    });
     return Scaffold(
       body: ScopedModelDescendant<FirebaseModel>(
         builder: (context, child, model) => Container(
@@ -28,25 +34,25 @@ class Login extends StatelessWidget {
               ),
               child: Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
+                    SizedBox(
+                      height: 80,
+                    ),
                     Text(
                       "Todoy",
                       style:
                           TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
-                      height: 150,
-                    ),
                     Image.asset("assets/logo.png"),
-                    SizedBox(
-                      height: 150,
-                    ),
                     RaisedButton(
-                      child: Text("Sign By Google"),
+                      child: Text("SignIn By Google"),
                       onPressed: () {
                         model.login();
                       },
+                    ),
+                    SizedBox(
+                      height: 80,
                     ),
                   ],
                 ),
