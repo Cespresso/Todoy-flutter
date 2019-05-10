@@ -11,4 +11,12 @@ class Todo {
         title = json["title"],
         body = json["body"],
         completed = json["completed"];
+//
+//  String getShortBody(){
+//    if(body==null) return "";
+//    if(body.length<10){
+//      return body;
+//    }
+//    return (body.substring(0,10)).split('\u{\n}')[0];
+//  }
 }

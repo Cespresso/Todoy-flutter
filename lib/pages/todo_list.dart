@@ -29,8 +29,10 @@ class TodoList extends StatelessWidget {
       return ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
+            onTap: () =>Navigator.pushNamed<bool>(
+                context, "/todo/" + index.toString()),
             title: Text(todos[index].title ?? ""),
-            subtitle: Text(todos[index].body ?? ""),
+//            subtitle: Text(todos[index].body ?? ""),
             leading: todos[index].completed
                 ? Icon(Icons.check_box)
                 : Icon(Icons.check_box_outline_blank),

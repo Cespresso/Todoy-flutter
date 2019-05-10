@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:todoy_flutter/model/todo_model.dart';
 import 'package:todoy_flutter/pages/login.dart';
+import 'package:todoy_flutter/pages/todo_detail.dart';
 import 'package:todoy_flutter/pages/todo_list.dart';
 
 main() {
@@ -34,6 +35,22 @@ class _MyAppState extends State<MyApp> {
               model: widget.todoModel,
               child: TodoList(),
             ),
+      },
+      onGenerateRoute: (RouteSettings settings) {
+        final List<String> pathElements = settings.name.split("/");
+        if (pathElements[0] != "") {
+          return null;
+        }
+        if (pathElements[1] == "todo") {
+          final int index = int.parse(pathElements[2]);
+          return MaterialPageRoute<bool>(
+            builder: (BuildContext context) => ScopedModel<TodoModel>(
+              model: widget.todoModel,
+              child: TodoDetail(index),
+            ),
+          );
+        }
+        return null;
       },
       onUnknownRoute: (RouteSettings settings) {
         return MaterialPageRoute(
