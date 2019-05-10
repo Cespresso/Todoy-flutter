@@ -32,6 +32,9 @@ dependencies:
   # Scoped Model
   scoped_model: 1.0.1
 
+  # http
+  http: ^0.12.0+2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
