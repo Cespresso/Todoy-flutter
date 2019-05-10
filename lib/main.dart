@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:todoy_flutter/model/firebase_model.dart';
 import 'package:todoy_flutter/model/todo_model.dart';
 import 'package:todoy_flutter/pages/login.dart';
 import 'package:todoy_flutter/pages/todo_list.dart';
@@ -10,7 +9,6 @@ main() {
 }
 
 class MyApp extends StatefulWidget {
-  final FirebaseModel firebaseModel = FirebaseModel();
   final TodoModel todoModel = TodoModel();
 
   @override
@@ -28,22 +26,19 @@ class _MyAppState extends State<MyApp> {
 //        child: Login(),
 //      ),
       routes: {
-        "/": (BuildContext context) => ScopedModel<FirebaseModel>(
-              model: widget.firebaseModel,
+        "/": (BuildContext context) => ScopedModel<TodoModel>(
+              model: widget.todoModel,
               child: Login(),
             ),
-        "/todos": (BuildContext context) => ScopedModel<FirebaseModel>(
-              model: widget.firebaseModel,
-              child: ScopedModel<TodoModel>(
-                model: widget.todoModel,
-                child: TodoList(),
-              ),
+        "/todos": (BuildContext context) => ScopedModel<TodoModel>(
+              model: widget.todoModel,
+              child: TodoList(),
             ),
       },
       onUnknownRoute: (RouteSettings settings) {
         return MaterialPageRoute(
-          builder: (BuildContext context) => ScopedModel<FirebaseModel>(
-                model: widget.firebaseModel,
+          builder: (BuildContext context) => ScopedModel<TodoModel>(
+                model: widget.todoModel,
                 child: Login(),
               ),
         );

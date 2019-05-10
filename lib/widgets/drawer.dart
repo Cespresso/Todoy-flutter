@@ -6,14 +6,15 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: <Widget>[
+          AppBar(
+            automaticallyImplyLeading: false,
+            title: Text("Todoy"),
+          ),
           ListTile(
             title: Text("Home"),
           ),
           ListTile(
             title: Text("Profile"),
-          ),
-          ListTile(
-            title: Text("Settings"),
           ),
           Divider(),
           ListTile(

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:todoy_flutter/model/firebase_model.dart';
+import 'package:todoy_flutter/model/todo_model.dart';
 
 class Login extends StatelessWidget {
   DecorationImage _buildBackGroundImage() {
@@ -15,7 +15,7 @@ class Login extends StatelessWidget {
 
   _checkUser(BuildContext context) {
     FirebaseUser _user =
-        ScopedModel.of<FirebaseModel>(context, rebuildOnChange: true).user;
+        ScopedModel.of<TodoModel>(context, rebuildOnChange: true).user;
     if (_user != null) {
       Navigator.pushReplacementNamed(context, "/todos");
     }
@@ -27,7 +27,7 @@ class Login extends StatelessWidget {
       _checkUser(context);
     });
     return Scaffold(
-      body: ScopedModelDescendant<FirebaseModel>(
+      body: ScopedModelDescendant<TodoModel>(
         builder: (context, child, model) => Container(
               decoration: BoxDecoration(
                 image: _buildBackGroundImage(),
