@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:todoy_flutter/model/todo_model.dart';
+import 'package:todoy_flutter/pages/about.dart';
 import 'package:todoy_flutter/pages/login.dart';
+import 'package:todoy_flutter/pages/profile.dart';
 import 'package:todoy_flutter/pages/todo_detail.dart';
 import 'package:todoy_flutter/pages/todo_list.dart';
 
@@ -35,6 +37,14 @@ class _MyAppState extends State<MyApp> {
               model: widget.todoModel,
               child: TodoList(),
             ),
+        "/profile": (BuildContext context) => ScopedModel<TodoModel>(
+          model: widget.todoModel,
+          child: Profile(),
+        ),
+        "/about": (BuildContext context) => ScopedModel<TodoModel>(
+          model: widget.todoModel,
+          child: About(),
+        ),
       },
       onGenerateRoute: (RouteSettings settings) {
         final List<String> pathElements = settings.name.split("/");

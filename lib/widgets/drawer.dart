@@ -12,13 +12,16 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             title: Text("Home"),
+            onTap: ()=>Navigator.pushReplacementNamed(context, "/todos"),
           ),
           ListTile(
             title: Text("Profile"),
+            onTap: ()=>Navigator.pushReplacementNamed(context, "/profile"),
           ),
           Divider(),
           ListTile(
             title: Text("About"),
+            onTap: ()=>Navigator.pushReplacementNamed(context, "/about"),
           ),
 
         ],

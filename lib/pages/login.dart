@@ -23,6 +23,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScopedModel.of<TodoModel>(context, rebuildOnChange: true).checkAuth();
     Future.delayed(Duration(milliseconds: 100)).then((_) {
       _checkUser(context);
     });

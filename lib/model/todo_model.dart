@@ -17,6 +17,16 @@ class TodoModel extends Model {
     user = await _handleSignIn();
     notifyListeners();
   }
+  logout() async{
+    await _auth.signOut();
+    user = null;
+    notifyListeners();
+  }
+
+  checkAuth() async{
+    user = await _auth.currentUser();
+    notifyListeners();
+  }
 
   getTodos() async {
     if (user == null) return;
