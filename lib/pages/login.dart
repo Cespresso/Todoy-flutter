@@ -13,18 +13,18 @@ class Login extends StatelessWidget {
     );
   }
 
-  _checkUser(BuildContext context) {
+  _checkUser(BuildContext context) async{
     FirebaseUser _user =
         ScopedModel.of<TodoModel>(context, rebuildOnChange: true).user;
     if (_user != null) {
-      Navigator.pushReplacementNamed(context, "/todos");
+      await Navigator.pushReplacementNamed(context, "/todos");
     }
   }
 
   @override
   Widget build(BuildContext context) {
     ScopedModel.of<TodoModel>(context, rebuildOnChange: true).checkAuth();
-    Future.delayed(Duration(milliseconds: 100)).then((_) {
+    Future.delayed(Duration(milliseconds: 10)).then((_) {
       _checkUser(context);
     });
     return Scaffold(
@@ -47,9 +47,10 @@ class Login extends StatelessWidget {
                     ),
                     Image.asset("assets/logo.png"),
                     RaisedButton(
-                      child: Text("SignIn By Google"),
+                      color: Theme.of(context).primaryColor,
+                      child: Text("SignIn By Google",style: TextStyle(color: Colors.white),),
                       onPressed: () {
-                        model.login();
+                        model.login(context);
                       },
                     ),
                     SizedBox(

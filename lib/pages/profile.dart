@@ -5,19 +5,8 @@ import 'package:todoy_flutter/model/todo_model.dart';
 import 'package:todoy_flutter/widgets/drawer.dart';
 
 class Profile extends StatelessWidget {
-  _checkUser(BuildContext context) {
-    FirebaseUser _user =
-        ScopedModel.of<TodoModel>(context, rebuildOnChange: true).user;
-    if (_user == null) {
-      Navigator.pushReplacementNamed(context, "/");
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(milliseconds: 100)).then((_) {
-      _checkUser(context);
-    });
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
@@ -46,7 +35,7 @@ class Profile extends StatelessWidget {
                     textColor: Colors.white,
                     child: Text("sign out"),
                     onPressed: () {
-                      model.logout();
+                      model.logout(context);
                     },
                   )
                 ],

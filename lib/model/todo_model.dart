@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
 import 'package:scoped_model/scoped_model.dart';
@@ -13,13 +14,15 @@ class TodoModel extends Model {
   FirebaseUser user;
   List<Todo> todos;
 
-  login() async {
+  login(BuildContext context) async {
     user = await _handleSignIn();
+    await Navigator.pushReplacementNamed(context, "/todos");
     notifyListeners();
   }
-  logout() async{
+  logout(BuildContext context) async{
     await _auth.signOut();
     user = null;
+    await Navigator.pushReplacementNamed(context, "/");
     notifyListeners();
   }
 

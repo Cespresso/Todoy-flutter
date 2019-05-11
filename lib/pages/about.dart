@@ -28,7 +28,7 @@ class About extends StatelessWidget{
               TextStyle(fontSize: 24),
             ),
             Text(
-              "0.0.3",
+              "0.0.4",
               style:
               TextStyle(fontSize: 12),
             ),
