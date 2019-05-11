@@ -23,7 +23,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScopedModel.of<TodoModel>(context, rebuildOnChange: true).checkAuth();
+    ScopedModel.of<TodoModel>(context, rebuildOnChange: true).checkAuth(context);
     Future.delayed(Duration(milliseconds: 10)).then((_) {
       _checkUser(context);
     });
@@ -50,7 +50,7 @@ class Login extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                       child: Text("SignIn By Google",style: TextStyle(color: Colors.white),),
                       onPressed: () {
-                        model.login(context);
+                        model.login();
                       },
                     ),
                     SizedBox(

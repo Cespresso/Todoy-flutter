@@ -14,9 +14,8 @@ class TodoModel extends Model {
   FirebaseUser user;
   List<Todo> todos;
 
-  login(BuildContext context) async {
+  login() async {
     user = await _handleSignIn();
-    await Navigator.pushReplacementNamed(context, "/todos");
     notifyListeners();
   }
   logout(BuildContext context) async{
@@ -26,8 +25,11 @@ class TodoModel extends Model {
     notifyListeners();
   }
 
-  checkAuth() async{
+  checkAuth(BuildContext context) async{
     user = await _auth.currentUser();
+    if(user!=null){
+      await Navigator.pushReplacementNamed(context, "/todos");
+    }
     notifyListeners();
   }
 
