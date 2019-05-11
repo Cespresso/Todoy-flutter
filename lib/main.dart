@@ -24,10 +24,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-//      home: ScopedModel<FirebaseModel>(
-//        model: FirebaseModel(),
-//        child: Login(),
-//      ),
+      theme: new ThemeData(
+        primarySwatch: Colors.orange,  //MaterialColor
+      ),
       routes: {
         "/": (BuildContext context) => ScopedModel<TodoModel>(
               model: widget.todoModel,
