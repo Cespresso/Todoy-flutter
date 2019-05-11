@@ -12,6 +12,7 @@ class Profile extends StatelessWidget {
       Navigator.pushReplacementNamed(context, "/");
     }
   }
+
   @override
   Widget build(BuildContext context) {
     Future.delayed(Duration(milliseconds: 100)).then((_) {
@@ -28,14 +29,18 @@ class Profile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    child: Image.network(model.user.photoUrl ?? ""),
+                    child: model.user != null
+                        ? Image.network(model.user.photoUrl)
+                        : Text("No Image"),
                     padding: EdgeInsets.all(30),
                   ),
                   Text(
-                    model.user.displayName,
+                    model.user != null ? model.user.displayName : "",
                     style: TextStyle(fontSize: 24),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   RaisedButton(
                     color: Colors.red,
                     textColor: Colors.white,
