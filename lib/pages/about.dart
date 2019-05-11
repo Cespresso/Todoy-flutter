@@ -6,7 +6,7 @@ class About extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile"),
+        title: Text("About"),
       ),
       drawer: MyDrawer(),
       body: Center(
@@ -28,7 +28,7 @@ class About extends StatelessWidget{
               TextStyle(fontSize: 24),
             ),
             Text(
-              "0.0.5",
+              "0.0.6",
               style:
               TextStyle(fontSize: 12),
             ),
