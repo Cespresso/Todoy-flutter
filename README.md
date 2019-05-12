@@ -1,16 +1,17 @@
-# todoy_flutter
+# Todoy-Flutter
+TodoyのFlutter(Dart)で作成したクライアントアプリです。
+閲覧機能のみの実装です。
+<img src="https://user-images.githubusercontent.com/13589160/57568683-d5238e80-7425-11e9-83ef-813c196e0178.jpg" width="320px">
+<img src="https://user-images.githubusercontent.com/13589160/57568684-d5bc2500-7425-11e9-8d72-9bf66685b8a3.jpg" width="320px">
 
-A new Flutter application.
+- Android用のビルドしたApkファイルは、Githubのリリースのページの最新のバージョンをご利用ください。
+- ※ログインにはGoogleのアカウントが必要です。
+- ※ログイン時のデータに関して流出等には善処しますが、一切の保証等は行わないのでご注意ください。
+- ※iosをビルドできる環境を保持していないため、コード上でios用の設定はしていません。
+- サーバーサイドは以下です。
 
-## Getting Started
+https://github.com/Cespresso/learn-spring-Todoy-Server-
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### 技術等
+- FirebaseAuth
+- Scoped Model
